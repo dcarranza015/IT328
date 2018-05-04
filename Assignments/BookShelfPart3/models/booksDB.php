@@ -91,7 +91,18 @@ function addBook($connection, $title, $fiction, $publisher, $summary, $pages) {
 }
 
 /* searches for the book with the given id and updates all attributes with the input parameters */
-function updateBook($connection, $id, $title, $fiction, $publisher, $summary, $pages) {
+function updateBook($id, $title, $fiction, $publisher, $summary, $pages) {
+
+    $q = "UPDATE books 
+          SET title = '$title', fiction = '$fiction', publisher = '$publisher', summary = '$summary', pages = '$pages' 
+          WHERE id = '$id' ";
+
+    $r = mysqli_query(getConnection(), $q); // Run the query.
+
+    //check was the query successful
+    if($r){
+        return true;
+    }else return false;
 
 
 }

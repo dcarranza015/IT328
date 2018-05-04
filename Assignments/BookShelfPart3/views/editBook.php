@@ -9,21 +9,6 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     require '../models/booksDB.php';
-    $connection = getConnection();
-
-    $id = $_POST['id'];
-
-    $title = $_POST['title'];
-    $fiction = $_POST['fiction'];
-    $publisher = $_POST['publisher'];
-    $pages = $_POST['pages'];
-    $summary = $_POST['summary'];
-
-    $q = "UPDATE books 
-          SET id = '$id', title = '$title', fiction = '$fiction', publisher = '$publisher', summary = '$summary', pages = '$pages' 
-          WHERE id = '$id' ";
-
-    $r = mysqli_query($connection, $q); // Run the query.
 
     // If it ran OK.
     if ($r)
@@ -36,8 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $result = '<div class="alert alert-danger">Sorry there was an error</div>';
     }
 }
-
-
 ?>
 
 <?php require 'components/header.php' ?>

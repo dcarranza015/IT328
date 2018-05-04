@@ -39,7 +39,9 @@ function handleEditBooksGet($id) {
 
 /* updates a record from the editBooks.php page form and then redirects to the viewBooks.php page. */
 function handleEditBooksPost() {
-
+    updateBook($_POST['id'],$_POST['title'],$_POST['fiction'],$_POST['publisher'],$_POST['summary'],$_POST['pages'] );
+    //you can create the function for validation entries. validateEntries($_POST); //it will return mysqli_escape
+    header('location: index.php?page=view');
 }
 
 //deletes a book with the given id and displays the deleteBooks.php page

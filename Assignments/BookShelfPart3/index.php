@@ -25,6 +25,9 @@ switch ($page) {
         if($httpVerb == 'GET'){
             handleEditBooksGet($_GET['id']);
         }
+        else{//POST
+            handleEditBooksPost();
+        }
         break;
 //    case 'add':
 //        if ($httpVerb == 'GET') {

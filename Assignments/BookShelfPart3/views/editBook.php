@@ -8,7 +8,6 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-
     require '../models/booksDB.php';
     $connection = getConnection();
 
@@ -38,39 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     }
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET')
-{
-    $id = $_GET['id'];
-
-    require '../models/booksDB.php';
-    $connection = getConnection();
-
-    $q = "SELECT * FROM books WHERE id = '$id'";
-
-    $rq = mysqli_query($connection, $q);
-
-    $r = mysqli_fetch_assoc($rq);
-
-    //checks if something is inside
-    if (sizeof($r) > 0)
-    {
-        $title = $r['title'];
-        $fiction = $r['fiction'];
-        $publisher = $r['publisher'];
-        $pages = $r['pages'];
-        $summary = $r['summary'];
-    }
-
-}
 
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <?php require 'components/header.php' ?>
 
-</head>
-<body>
+<?php require 'components/header.php' ?>
 
 
 <div class="form-group">
@@ -81,13 +51,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
 <div class="container">
 
 
-    <form action="editBook.php" method="post">
+    <form action="index.php?page=edit" method="post">
 
         <!-- book title -->
         <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="title">Title</label>
             <div class="col-sm-10">
-                <input title="stopYellow" class="form-control" type="text" name="title" value="<?php echo $title ?>">
+                <input title="stopYellow" class="form-control" type="text" name="title" value="<?php echo $book['title'] ?>">
             </div>
         </div>
 
@@ -98,12 +68,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
                 <div class="col-sm-10">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="ifFiction" id="fiction"
-                               value="yes" <?php if ($fiction) echo 'checked' ?>>
+                               value="yes" <?php if ($book['fiction']) echo 'checked' ?>>
                         <label class="form-check-label" for="fiction"> yes </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="ifFiction" id="nonFiction"
-                               value="no" <?php if (!$fiction) echo 'checked' ?>>
+                               value="no" <?php if (!$book['fiction']) echo 'checked' ?>>
                         <label class="form-check-label" for="nonFiction"> No </label>
                     </div>
                 </div>
@@ -116,18 +86,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
             <div class="col-sm-10">
                 <select id="publisher" class="form-control" name="publisher">
                     <option selected></option>
-                    <option value="Harper Collins" <?php if ($publisher == 'Harper Collins') echo 'selected' ?>>Harper
+                    <option value="Harper Collins" <?php if ($book['publisher'] == 'Harper Collins') echo 'selected' ?>>Harper
                         Collins
                     </option>
-                    <option value="Pearson" <?php if ($publisher == 'Pearson') echo 'selected' ?>>Pearson</option>
-                    <option value="Scholastic Press" <?php if ($publisher == 'Scholastic Press') echo 'selected' ?>>
+                    <option value="Pearson" <?php if ($book['publisher']  == 'Pearson') echo 'selected' ?>>Pearson</option>
+                    <option value="Scholastic Press" <?php if ($book['publisher']  == 'Scholastic Press') echo 'selected' ?>>
                         Scholastic Press
                     </option>
-                    <option value="Penguin Classics" <?php if ($publisher == 'Penguin Classics') echo 'selected' ?>>
+                    <option value="Penguin Classics" <?php if ($book['publisher']  == 'Penguin Classics') echo 'selected' ?>>
                         Penguin Classics
                     </option>
-                    <option value="Bantam" <?php if ($publisher == 'Bantam') echo 'selected' ?>>Bantam</option>
-                    <option value="Mariner Books" <?php if ($publisher == 'Mariner Books') echo 'selected' ?>>Mariner
+                    <option value="Bantam" <?php if ($book['publisher']  == 'Bantam') echo 'selected' ?>>Bantam</option>
+                    <option value="Mariner Books" <?php if ($book['publisher']  == 'Mariner Books') echo 'selected' ?>>Mariner
                         Books
                     </option>
                 </select>
@@ -139,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
         <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="summary">Summary</label>
             <div class="col-sm-10">
-                <textarea name="summary" id="summary" class="form-control" rows="7"><?php echo $summary ?></textarea>
+                <textarea name="summary" id="summary" class="form-control" rows="7"><?php echo $book['summary']  ?></textarea>
             </div>
         </div>
 
@@ -148,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
         <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="pages">Pages</label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="pages" placeholder="546" value="<?php echo $pages ?>">
+                <input class="form-control" type="text" name="pages" placeholder="546" value="<?php echo $book['pages']  ?>">
             </div>
         </div>
 
@@ -157,21 +127,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
         <div class="text-center">
             <button type="submit" class="btn btn-primary mb-2 align-items-center" value="Add!">Save Changes</button>
         </div>
-        <input type="text" hidden value="<?php echo $_GET['id'] ?>" name="id">
+        <input type="text" hidden value="<?php echo $book['id']  ?>" name="id">
     </form>
 </div>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-        crossorigin="anonymous"></script>
-<?php include 'components/footer.php'?>
-</body>
-</html>
+<?php include 'components/footer.php' ?>

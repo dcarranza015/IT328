@@ -50,6 +50,19 @@ function getBooks($connection) {
     return $books;
 }
 
+function getBook($id){
+
+
+    $q = "SELECT * FROM books WHERE id = '$id'";
+
+    $rq = mysqli_query(getConnection(), $q);
+
+    //check was the query successful
+    if($rq){
+        return $r = mysqli_fetch_assoc($rq);
+    }else return false;
+
+}
 //adds a new book to the database
 function addBook($connection, $title, $fiction, $publisher, $summary, $pages) {
 

@@ -5,6 +5,8 @@
  * Date: 4/30/18
  * Time: 10:38 AM
  */
+
+include 'models/booksDB.php';
 //loads the addBooks.php page
 function handleAddBooks() {
 
@@ -12,17 +14,26 @@ function handleAddBooks() {
 
 //retrieves all books from the DB and loads the viewBooks.php page
 function handleViewBooksGet() {
+    //prepare the data for the view page
+    $books =  getBooks(getConnection());
 
+    //load the view page
+    require 'views/viewBooks.php';
 }
 
-/* inserts a new book into the DB using data from the form on addBooks.php.
-Afterward retrieves all books from the DB and loads the viewBooks.php page. */
-function handleViewBooksPost() {
-
-}
+///* inserts a new book into the DB using data from the form on addBooks.php.
+//Afterward retrieves all books from the DB and loads the viewBooks.php page. */
+//function handleViewBooksPost() {
+//
+//}
 
 //loads a new book into the editBooks.php page
-function handleEditBooksGet() {
+function handleEditBooksGet($id) {
+    //prepare the data for the view page
+    $book = getBook($id);
+
+    //load the view page
+    require 'views/editBook.php';
 
 }
 

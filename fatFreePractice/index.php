@@ -11,6 +11,7 @@
     error_reporting(E_ALL);
 
     //global includes
+    require  'model/model.php';
     require 'controllers/controller.php';
 
     //load the fat free framework
@@ -31,6 +32,14 @@
 
     $fatFree->route('GET /saying/@message', function ($fatFree, $params){
         printSpecificSaying($fatFree, $params['message']);
+    });
+
+    $fatFree->route('GET /hometown/@message', function ($fatFree, $params){
+        printHometown($fatFree, $params['message']);
+    });
+
+    $fatFree->route('GET /primes/@low/@high', function ($fatFree, $params){
+       calculatePrimes($fatFree, $params['low'], $params['high']);
     });
 
     $fatFree->run();

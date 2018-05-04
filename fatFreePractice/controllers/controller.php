@@ -24,3 +24,20 @@
 
         echo Template::instance()->render('views/specificSaying.php');
     }
+
+    function printHometown($fatFree, $message){
+        //saving a value as a "router variable"
+        $fatFree->set('message', $message);
+
+        echo Template::instance()->render('views/homeTown.php');
+    }
+
+    function calculatePrimes($fatFree, $low, $high){
+        $primes = findPrimes($low, $high);
+
+        // save our data to the router
+        $fatFree->set('primes', $primes);
+
+        // load the page
+        echo Template::instance()->render('views/primes.php');
+    }

@@ -43,7 +43,7 @@
                 <a class="nav-link" href="index.php?page=view">View Books <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Add Books</a>
+                <a class="nav-link" href="index.php?page=add">Add Books</a>
             </li>
         </ul>
     </div>

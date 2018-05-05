@@ -1,6 +1,9 @@
 <?php
 /**
- *
+ * Created by PhpStorm.
+ * User: dianacarranza
+ * Date: 4/30/18
+ * Time: 10:38 AM
  */
 //load shared resources among pages
 //require 'database/db.php';
@@ -12,29 +15,47 @@ $httpVerb = $_SERVER['REQUEST_METHOD']; //GET or POST
 //determine which page was requested
 $page = 'view';
 $file = 'viewBooks.php';
-if (isset($_GET['page'])) {
+if (isset($_GET['page']))
+{
     $page = $_GET['page'];
 }
 
 //pass control to a controller function
-switch ($page) {
+switch ($page)
+{
     case 'view':
         handleViewBooksGet();
         break;
     case 'edit':
-        if($httpVerb == 'GET'){
+        if ($httpVerb == 'GET')
+        {
             handleEditBooksGet($_GET['id']);
         }
-        else{//POST
+        else
+        {//POST
             handleEditBooksPost();
         }
         break;
-//    case 'add':
-//        if ($httpVerb == 'GET') {
-//            handleAddBooks();
-//        } else { //POST
-//            handleInsertForm();
-//        }
-//        break;
+    case 'delete':
+        if ($httpVerb == 'GET')
+        {
+            handleDeleteBooksGet();
+        }
+        else
+        { //POST
+            handleDeleteBooksPost();
+        }
+        break;
+    case 'add':
+        if ($httpVerb == 'GET')
+        {
+            handleAddBooks();
+        }
+        else
+        { //POST
+            handleAddBooksPost();
+        }
+        break;
 }
+
 ?>

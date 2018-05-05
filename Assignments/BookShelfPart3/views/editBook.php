@@ -6,21 +6,7 @@
  * Time: 10:26 PM
  */
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST')
-{
-    require '../models/booksDB.php';
 
-    // If it ran OK.
-    if ($r)
-    {
-        $result = '<div class="alert alert-success">Success</div>';
-        header('location: viewBooks.php');
-    }
-    else
-    {
-        $result = '<div class="alert alert-danger">Sorry there was an error</div>';
-    }
-}
 ?>
 
 <?php require 'components/header.php' ?>
@@ -28,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <div class="form-group">
     <div class="col-sm-10 col-sm-offset-2">
-        <?php echo $result; ?>
+        <?php //echo $result; ?>
     </div>
 </div>
 <div class="container">

@@ -7,6 +7,7 @@
  */
 require "parts/header.php"
 ?>
+<include href="views/parts/header.php"></include>
 
 <div class="container">
     <div class="page-header">
@@ -60,6 +61,12 @@ require "parts/header.php"
                 <textarea name="summary" id="summary" class="form-control" rows="7"></textarea>
             </div>
         </div>
-    </div>
+        <!-- submit the form -->
+        <div class="text-right">
+            <form class="" action="gettingstarted/profile" method="get">
+                <button type="submit" class="btn btn-primary mb-2 align-items-center">Next ></button>
+            </form>
+        </div>
 
 </div>
+    <include href="views/parts/footer.php"></include>

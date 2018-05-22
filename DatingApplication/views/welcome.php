@@ -5,12 +5,16 @@
  * Date: 5/15/18
  * Time: 11:37 PM
  */
-require "parts/header.php"
+require "parts/header.php";
+require "parts/footer.php";
+
 ?>
+<include href="views/parts/header.php"></include>
+
 <div class="form-group"></div>
 <div>
 
-<div class="container ">
+<div class="container">
     <div class="row">
         <div class="col-md ">
             <div class="list-group">
@@ -30,16 +34,17 @@ require "parts/header.php"
 
                 <!-- submit the form -->
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary mb-2 align-items-center" value="Add!">Create a Profile</button>
+                    <a class="btn btn-primary mb-2 align-items-center" href="/gettingstarted/personal">Create a Profile</a>
                 </div>
             </div>
         </div>
         <div class="col-md ">
             <div class="list-group ">
-                <img src="../images/Boss.jpg" class="rounded img-fluid" alt="Responsive image">
+                <img src="../DatingApplication/images/Boss.jpg" class="rounded img-fluid" alt="Responsive image">
             </div>
         </div>
 
 
     </div>
 </div>
+    <include href="views/parts/footer.php"></include>

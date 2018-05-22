@@ -7,6 +7,8 @@
  */
 require "parts/header.php"
 ?>
+<include href="views/parts/header.php"></include>
+
 <div class="container">
     <div class="page-header">
         <h1>Interests</h1>
@@ -15,44 +17,44 @@ require "parts/header.php"
     <div class="row">
         <div class="col-sm">
             <label>
-                <input type="checkbox" id="inlineCheckbox1" value="option1"> TV
+                <input type="checkbox" name="outdoor_interests[]" value="tv"> TV
             </label>
         </div>
         <div class="col-sm">
             <label>
-                <input type="checkbox"> Movies
+                <input type="checkbox" name="outdoor_interests[]" value="movies"> Movies
             </label>
         </div>
         <div class="col-sm">
             <label>
-                <input type="checkbox"> Cooking
+                <input type="checkbox" name="outdoor_interests[]" value="cooking"> Cooking
             </label>
         </div>
         <div class="col-sm">
             <label>
-                <input type="checkbox"> Reading
+                <input type="checkbox" name="outdoor_interests[]" value="reading"> Reading
             </label>
         </div>
     </div>
     <div class="row">
         <div class="col-sm">
             <label>
-                <input type="checkbox"> Sleeping
+                <input type="checkbox" name="outdoor_interests[]" value="sleeping"> Sleeping
             </label>
         </div>
         <div class="col-sm">
             <label>
-                <input type="checkbox"> Puzzles
+                <input type="checkbox" name="outdoor_interests[]" value="puzzles"> Puzzles
             </label>
         </div>
         <div class="col-sm">
             <label>
-                <input type="checkbox"> Video Games
+                <input type="checkbox" name="outdoor_interests[]" value="videoGames"> Video Games
             </label>
         </div>
         <div class="col-sm">
             <label>
-                <input type="checkbox"> Board Games
+                <input type="checkbox" name="outdoor_interests[]" value="boardGames"> Board Games
             </label>
         </div>
     </div>
@@ -60,20 +62,28 @@ require "parts/header.php"
     <div class="row">
         <div class="col-sm">
             <label>
-                <input type="checkbox"> Walking
+                <input type="checkbox" name="outdoor_interests[]" value="walking"> Walking
             </label></div>
         <div class="col-sm">
             <label>
-                <input type="checkbox"> Hiking
+                <input type="checkbox" name="outdoor_interests[]" value="hiking"> Hiking
             </label></div>
         <div class="col-sm">
             <label>
-                <input type="checkbox"> Biking
+                <input type="checkbox" name="outdoor_interests[]" value="biking"> Biking
             </label></div>
         <div class="col-sm">
             <label>
-                <input type="checkbox"> Swimming
+                <input type="checkbox" name="outdoor_interests[]" value="swimming"> Swimming
             </label></div>
     </div>
+    <!-- submit the form -->
+    <div class="text-right">
+        <form class="" action="gettingstarted/interests" method="get">
+            <button type="submit" class="btn btn-primary mb-2 align-items-center">Next ></button>
+        </form>
+    </div>
+
 
 </div>
+<include href="views/parts/footer.php"></include>

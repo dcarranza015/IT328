@@ -7,6 +7,7 @@
  */
 require "parts/header.php"
 ?>
+<include href="views/parts/header.php"></include>
 
 <div class="container">
     <div class="page-header">
@@ -60,21 +61,20 @@ require "parts/header.php"
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 form-group">
-            <div class="jumbotron">
+        <div class="col-sm-4 ">
+            <div class="alert alert-secondary" role="alert">
                 <p><b>Note:</b> All information is protected by our privacy policy. Profile information can only be
                     viewed by others with your permission</p>
             </div>
         </div>
     </div>
+    <!-- submit the form -->
+    <div class="text-right">
+        <form class="" action="gettingstarted/personalInfo" method="get">
+            <button type="submit" class="btn btn-primary mb-2 align-items-center">Next ></button>
+        </form>
+    </div>
 
 </div>
 
-
-<!--<!-- First Name -->
-<!--<div class="col-sm-6 form-group">-->
-<!--    <label class="col-sm-12 col-form-label" for="title">First Name</label>-->
-<!--    <div class="col-sm-12">-->
-<!--        <input title="stopYellow" class="form-control" type="text" name="title" value=" ">-->
-<!--    </div>-->
-<!--</div>-->
+<include href="views/parts/footer.php"></include>

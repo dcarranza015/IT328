@@ -34,12 +34,24 @@
         personalInfo();
     });
 
+    $fatFree->route('POST /gettingstarted/personalInfo',function ($fatFree){
+        personalInfoPOST($fatFree->get('POST'));
+    });
+
     $fatFree->route('GET /gettingstarted/profile',function (){
         profile();
     });
 
+    $fatFree->route('POST /gettingstarted/profile',function ($fatFree){
+        profileInfoPOST($fatFree->get('POST'));
+    });
+
     $fatFree->route('GET /gettingstarted/interests',function (){
         interests();
+    });
+
+    $fatFree->route('POST /gettingstarted/interests',function ($fatFree){
+        interestsPOST($fatFree->get('POST'));
     });
 
     $fatFree->run();

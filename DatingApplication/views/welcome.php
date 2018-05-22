@@ -34,7 +34,7 @@ require "parts/footer.php";
 
                 <!-- submit the form -->
                 <div class="text-center">
-                    <a class="btn btn-primary mb-2 align-items-center" href="/gettingstarted/personal">Create a Profile</a>
+                    <a class="btn btn-primary mb-2 align-items-center" href="/DatingApplication/gettingstarted/personalInfo">Create a Profile</a>
                 </div>
             </div>
         </div>

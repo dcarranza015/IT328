@@ -13,6 +13,8 @@ require "parts/header.php"
     <div class="page-header">
         <h1>Interests</h1>
     </div>
+    <form class="" action="/DatingApplication/gettingstarted/interests" method="POST">
+
     <p><b>In Door Interests</b></p>
     <div class="row">
         <div class="col-sm">
@@ -79,10 +81,9 @@ require "parts/header.php"
     </div>
     <!-- submit the form -->
     <div class="text-right">
-        <form class="" action="gettingstarted/interests" method="get">
             <button type="submit" class="btn btn-primary mb-2 align-items-center">Next ></button>
-        </form>
     </div>
+    </form>
 
 
 </div>

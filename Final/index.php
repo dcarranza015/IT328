@@ -21,8 +21,13 @@ $fatFree->set('ONERROR', function ($fatFree){
 });
 
 //define some routes
+$fatFree->route('GET /welcome', function (){
+    loginPage();
+});
+
+
 $fatFree->route('GET /', function (){
-    welcome();
+    welcomePage();
 });
 
 $fatFree->run();

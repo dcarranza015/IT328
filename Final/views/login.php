@@ -7,8 +7,8 @@
  */
 ?>
 
-<include href="views/header.php"></include>
-
+<include href="views/parts/header.php"></include>
+<script src="scripts/login.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-sm-4" style="background-color:cadetblue;">
@@ -19,7 +19,7 @@
         <div class="col-sm" style="background-color:dodgerblue;">
             <div class="form-group row">
                 <div class="col-sm">
-                    <h3 align="center">Welcome to bookmark share</h3>
+                    <h3 align="center">Login to continue</h3>
                 </div>
             </div>
             <div class="form-group row">
@@ -45,10 +45,9 @@
                     <div align="center" class="col-sm">
                         <!-- submit the form -->
                         <div class="text-center">
-                            <a class="btn btn-primary mb-2 align-items-center" href="/Final/views/welcome.php">Login</a>
-                            <a class="btn btn-primary mb-2 align-items-center" href="/Final/views/welcome.php">Register</a>
+                            <a class="btn btn-primary mb-2 align-items-center" id="login" href="#">Login</a>
+                            <a class="btn btn-primary mb-2 align-items-center" id="register" href="#">Register</a>
                         </div>
-
                     </div>
                 </div>
 

@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-sm-4" style="background-color:cadetblue;">
             <div class="form-group">
-                <h2>Login to Navigate</h2>
+                <h2>Welcome!</h2>
             </div>
         </div>
         <div class="col-sm" style="background-color:dodgerblue;">
@@ -44,8 +44,8 @@
                     <div align="center" class="col-sm">
                         <!-- submit the form -->
                         <div class="text-center">
-                            <a class="btn btn-primary mb-2 align-items-center" href="/Final/views/welcome.php">Login</a>
-                            <a class="btn btn-primary mb-2 align-items-center" href="/Final/views/welcome.php">Register</a>
+                            <a class="btn btn-primary mb-2 align-items-center" href="#">Login</a>
+                            <a class="btn btn-primary mb-2 align-items-center" href="#">Register</a>
                         </div>
                     </div>
                 </div>

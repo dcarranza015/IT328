@@ -10,8 +10,8 @@ function validate(event) {
 
     let isError = false;
 
-    //employee id - must be 10 characters
-    let id = $("#inputPassword").val();
+    //Password - must be 10 characters
+    let id = $("#password").val();
     if (id.length !== 10) {
         reportError("Password error", "8-16 characters");
         isError = true;

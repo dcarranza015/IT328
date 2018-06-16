@@ -28,12 +28,5 @@ include_once 'bookmarkDB.php';
         $isValid = checkUser($email, $password);
         return $isValid;
     }
-    function ajaxGetColors(){
-        //get an array of color records
-        $colorsArray = getColors();
 
-        //send the array to the JS file in the browser as JSON data
-        echo json_encode($colorsArray);
-
-    }
 ?>

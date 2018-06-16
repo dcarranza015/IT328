@@ -3,14 +3,6 @@ $(document).ready(function () {
     $('#register').click(register);
 
 
-    //assign event listener to login & register buttons
-
-   //grab email and pwd fields
-
-   //validate the data in the fields
-    //if valid - send the request to DB to register
-    //validate on the backend, if not valid, send the response back
-    //JS check the response. If positive - redirect to welcome page. Otherwise show the error message on the page
 });
 
 function login(event) {
@@ -37,18 +29,6 @@ function login(event) {
             alert(data);
         }
     });
-    // -- No --
-    // $.post("model/requestHandler.php",
-    //     {
-    //         command: "login"
-    //     }, function (response) {
-    //         alert(response);
-    //  });
-    //if not valid send error
-
-    //if valid check if in data base // if is in database, start session and redirect
-
-    //if not in data base throw error
 
 }
 

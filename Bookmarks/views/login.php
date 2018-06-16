@@ -10,12 +10,12 @@
 <script src="scripts/login.js?v={{rand(1,100)}}"></script>
 <div class="container">
     <div class="row">
-        <div class="col-sm-4" style="background-color:cadetblue;">
+        <div class="col-sm-4" style="background-color:#b3cdd2;">
             <div class="form-group">
                 <h2>Login to Navigate</h2>
             </div>
         </div>
-        <div class="col-sm" style="background-color:dodgerblue;">
+        <div class="col-sm" style="background-color:#ebdde1;">
             <div class="form-group row">
                 <div class="col-sm">
                     <h3 align="center">Login to continue</h3>
@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <form class="validateForm" method="get" action="#">
+            <form class="validateForm" onsubmit="" method="get" action="#">
                 <div class="form-group row">
                     <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-8">
